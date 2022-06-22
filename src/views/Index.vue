@@ -11,9 +11,7 @@
         <router-link to="/landing">Home</router-link>
       </div>
     </div>
-    <transition name="bounce">
-    <h1>Daily To-Do list manager</h1>
-    </transition>
+    <h1>Tuliskan kegiatan yang ingin anda lakukan</h1>
     <section class="todo-wrapper">
       <h2 class="todo-title">{{ today.day }}<br>{{ today.date }}</h2>
       <form @keydown.enter.prevent="">

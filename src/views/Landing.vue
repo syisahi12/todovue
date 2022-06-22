@@ -17,9 +17,9 @@
                 <router-link to="/">Mulai</router-link>
             </div>
             <ul class="social">
-                <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-                <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
-                <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+                <li><a href="#"><img src="../assets/images/facebook.png"></a></li>
+                <li><a href="#"><img src="../assets/images/twitter.png"></a></li>
+                <li><a href="#"><img src="../assets/images/instagram.png"></a></li>
             </ul>
         </section>
         <div class="menu">

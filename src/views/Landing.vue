@@ -14,7 +14,7 @@
                     anda
                     akan menjadi lebih produktif dengan fitur-fitur yang dapat membantu memenejement waktu dan kegiatan
                     anda. Tunggu apa lagi , mari mulai bersama kami!</p>
-                <router-link to="/">Mulai</router-link>
+                <router-link to="/todo">Mulai</router-link>
             </div>
             <ul class="social">
                 <li><a href="#"><img src="../assets/images/facebook.png"></a></li>

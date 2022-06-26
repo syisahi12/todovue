@@ -4,7 +4,7 @@
       <input type="checkbox" id="nav-check">
       <div class="nav-header">
         <div class="nav-title">
-          <router-link to="/landing"><img src="../assets/images/logo.png" alt="logo"></router-link>
+          <router-link to="/"><img src="../assets/images/logo.png" alt="logo"></router-link>
         </div>
       </div>
       <div class="nav-links">

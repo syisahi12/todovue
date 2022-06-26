@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     // path: '/', redirect: '/landing',
-    path: '/',
+    path: '/todo',
     name: 'index',
     component: () => import('../views/Index.vue')
   },
@@ -13,7 +13,7 @@ const routes = [
     component: () => import('../views/History.vue')
   },
   {
-    path: '/landing',
+    path: '/',
     name: 'landing',
     component: () => import('../views/Landing.vue')
   },
@@ -21,6 +21,11 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('../views/About.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'notfound',
+    component: () => import('../views/PageNotFound.vue')
   }
 ]
 

@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="nav-links">
-        <router-link to="/landing">Home</router-link>
+        <router-link to="/">Home</router-link>
       </div>
     </div>
     <h1>Tuliskan kegiatan yang ingin anda lakukan</h1>

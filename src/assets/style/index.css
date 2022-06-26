@@ -64,8 +64,14 @@
   .nav > #nav-check {
     display: none;
   }
+
   
   @media (max-width:600px) {
+
+    .nav{
+      display: flex;
+      justify-content: center;
+    }
     .nav > .nav-btn {
       display: inline-block;
       position: absolute;

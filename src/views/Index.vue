@@ -42,7 +42,8 @@
           >
         </p>
         <transition-group name="todo-item" tag="ul" class="todo-list">
-          <li v-for="item in pending" v-bind:key="item.title">
+          <li v-for="item in pending" :key="item.id" :class="{onEdit: item == editedTodo}">
+            <div class="viewTodo">
             <input
               class="todo-checkbox"
               v-bind:id="'item_' + item.id"
@@ -52,7 +53,15 @@
             <label v-bind:for="'item_' + item.id"></label>
             <span class="todo-text">{{ item.title }}</span>
             <span class="delete" @click="deleteItem(item)"></span>
-            <span class="edit" @click="editItem(item)"></span>
+            <span class="logoEdit" @click="editItem(item)"></span>
+            </div>
+            <input
+              class="edit"
+              type="text"
+              v-model="item.title"
+              @keydown.enter="editedTodo = null"
+              @blur="editedTodo = null"
+            />
           </li>
         </transition-group>
       </div>
@@ -109,10 +118,10 @@ export default {
   name: "App",
   data() {
     return {
-      todoList: [
-      ],
+      todoList: [],
       new_todo: "",
       showComplete: false,
+      editedTodo: null,
     };
   },
   mounted() {
@@ -195,8 +204,31 @@ export default {
       // save the new item in localstorage
       return true;
     },
+    editTodo: function (item) {
+      this.beforeEditCache = item.title;
+      this.editedTodo = item;
+    },
+
+    doneEdit: function (item) {
+      if (!this.editedTodo) {
+        return;
+      }
+      this.editedTodo = null;
+      todo.title = todo.title.trim();
+      if (!item.title) {
+        this.removeTodo(item);
+      }
+    },
+
+    cancelEdit: function (item) {
+      this.editedTodo = null;
+      todo.title = this.beforeEditCache;
+    },
     deleteItem(item) {
       this.todoList.splice(this.todoList.indexOf(item), 1);
+    },
+    editItem(item){
+      this.editedTodo = item
     },
     toggleShowComplete() {
       this.showComplete = !this.showComplete;

@@ -292,7 +292,24 @@
     display: inline-block;
     padding: 0 0.5em;
   }
-  
+
+  ul.todo-list li.onEdit .viewTodo{
+    display: none;
+  }
+
+  ul.todo-list li .edit{
+    display: none;
+  }
+
+  ul.todo-list li.onEdit .edit{
+    display: inline-block;
+  }
+
+  ul.todo-list li.onEdit input.edit{
+    min-width: 100%;
+    margin-bottom: -10px;
+    margin-top: -10px;
+  }
   
   ul.todo-list li .delete{
     position: absolute;
@@ -332,7 +349,7 @@
     transform: translate(-50%, -50%) scale(1);
   }
 
-  ul.todo-list li .edit{
+  ul.todo-list li .logoEdit{
     position: absolute;
     height: 100%;
     top: 50%;
@@ -346,7 +363,7 @@
     transition: all ease-in 0.25s;
   }
   
-  ul.todo-list li .edit:after{
+  ul.todo-list li .logoEdit:after{
     position: absolute;
     content: '';
     width: 16px;
@@ -361,12 +378,12 @@
     transition: all ease-in 0.25s;
   }
   
-  ul.todo-list li:hover .edit{
+  ul.todo-list li:hover .logoEdit{
     width: 44px;
     opacity: 1;
   }
   
-  ul.todo-list li:hover .edit:after{
+  ul.todo-list li:hover .logoEdit:after{
     transform: translate(-50%, -50%) scale(1);
   }
     

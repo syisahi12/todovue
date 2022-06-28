@@ -1,47 +1,82 @@
 <template>
   <div class="index">
     <div class="nav">
-      <input type="checkbox" id="nav-check">
+      <input type="checkbox" id="nav-check" />
       <div class="nav-header">
         <div class="nav-title">
-          <router-link to="/landing"><img src="../assets/images/logo.png" alt="logo"></router-link>
+          <router-link to="/"
+            ><img src="../assets/images/logo.png" alt="logo"
+          /></router-link>
         </div>
       </div>
       <div class="nav-links">
-        <router-link to="/landing">Home</router-link>
+        <router-link to="/">Home</router-link>
       </div>
     </div>
     <h1>Tuliskan kegiatan yang ingin anda lakukan</h1>
     <section class="todo-wrapper">
-      <h2 class="todo-title">{{ today.day }}<br>{{ today.date }}</h2>
+      <h2 class="todo-title">{{ today.day }},<br />{{ today.date }}</h2>
       <form @keydown.enter.prevent="">
-        <input type="text" class="input-todo" v-bind:class="{ active: new_todo }" placeholder="Ada yang ingin anda lakukan?"
-          v-model="new_todo" v-on:keyup.enter="addItem">
-        <div class="btn btn-add" v-bind:class="{ active: new_todo }" @click="addItem">+</div>
+        <input
+          type="text"
+          class="input-todo"
+          v-bind:class="{ active: new_todo }"
+          placeholder="Ada yang ingin anda lakukan?"
+          v-model="new_todo"
+          v-on:keyup.enter="addItem"
+        />
+        <div
+          class="btn btn-add"
+          v-bind:class="{ active: new_todo }"
+          @click="addItem"
+        >
+          +
+        </div>
       </form>
 
       <div v-if="pending.length > 0">
-        <p class="status busy">You have {{ pending.length }} pending item<span v-if="pending.length > 1">s</span></p>
+        <p class="status busy">
+          You have {{ pending.length }} pending item<span
+            v-if="pending.length > 1"
+            >s</span
+          >
+        </p>
         <transition-group name="todo-item" tag="ul" class="todo-list">
-          <li v-for="(item) in pending" v-bind:key="item.title">
-            <input class="todo-checkbox" v-bind:id="'item_' + item.id" v-model="item.done" type="checkbox">
+          <li v-for="item in pending" v-bind:key="item.title">
+            <input
+              class="todo-checkbox"
+              v-bind:id="'item_' + item.id"
+              v-model="item.done"
+              type="checkbox"
+            />
             <label v-bind:for="'item_' + item.id"></label>
             <span class="todo-text">{{ item.title }}</span>
             <span class="delete" @click="deleteItem(item)"></span>
+            <span class="edit" @click="editItem(item.id)"></span>
           </li>
         </transition-group>
       </div>
 
       <transition name="bounce">
-        <p class="status free" v-if="!pending.length"><img src="../assets/images/beer_celebration.svg"
-            alt="celebration">Time to chill! You have no todos.</p>
+        <p class="status free" v-if="!pending.length">
+          <img
+            src="../assets/images/like-svgrepo-com.svg"
+            alt="celebration"
+            style="width: 35px"
+          />Selamat pekerjaan anda telah selesai semua.
+        </p>
       </transition>
 
       <div v-if="completed.length > 0 && showComplete">
         <p class="status">Completed tasks: {{ completedPercentage }}</p>
         <transition-group name="todo-item" tag="ul" class="todo-list archived">
-          <li v-for="(item) in completed" v-bind:key="item.title">
-            <input class="todo-checkbox" v-bind:id="'item_' + item.id" v-model="item.done" type="checkbox">
+          <li v-for="item in completed" v-bind:key="item.title">
+            <input
+              class="todo-checkbox"
+              v-bind:id="'item_' + item.id"
+              v-model="item.done"
+              type="checkbox"
+            />
             <label v-bind:for="'item_' + item.id"></label>
             <span class="todo-text">{{ item.title }}</span>
             <span class="delete" @click="deleteItem(item)"></span>
@@ -49,9 +84,21 @@
         </transition-group>
       </div>
       <div class="control-buttons">
-        <div class="btn btn-secondary" v-if="completed.length > 0" @click="toggleShowComplete"><span
-            v-if="!showComplete">Show</span><span v-else>Hide</span> Complete</div>
-        <div class="btn btn-secondary" v-if="todoList.length > 0" @click="clearAll">Clear All</div>
+        <div
+          class="btn btn-secondary"
+          v-if="completed.length > 0"
+          @click="toggleShowComplete"
+        >
+          <span v-if="!showComplete">Show</span
+          ><span v-else>Hide</span> Complete
+        </div>
+        <div
+          class="btn btn-secondary"
+          v-if="todoList.length > 0"
+          @click="clearAll"
+        >
+          Clear All
+        </div>
       </div>
     </section>
   </div>
@@ -63,9 +110,6 @@ export default {
   data() {
     return {
       todoList: [
-        { id: 0, title: "Go to codepen and get inspired", done: false },
-        { id: 1, title: "Pick a project", done: false },
-        { id: 4, title: "Create a new pen", done: true },
       ],
       new_todo: "",
       showComplete: false,
@@ -123,7 +167,7 @@ export default {
 
       today = {
         day: weekday[today.getDay()],
-        date: mm + "-" + dd + "-" + yyyy,
+        date: dd + "-" + mm + "-" + yyyy,
       };
 
       return today;

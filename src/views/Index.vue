@@ -15,7 +15,7 @@
     </div>
     <h1>Tuliskan kegiatan yang ingin anda lakukan</h1>
     <section class="todo-wrapper">
-      <h2 class="todo-title">{{ today.day }}<br />{{ today.date }}</h2>
+      <h2 class="todo-title">{{ today.day }},<br />{{ today.date }}</h2>
       <form @keydown.enter.prevent="">
         <input
           type="text"
@@ -52,6 +52,7 @@
             <label v-bind:for="'item_' + item.id"></label>
             <span class="todo-text">{{ item.title }}</span>
             <span class="delete" @click="deleteItem(item)"></span>
+            <span class="edit" @click="editItem(item)"></span>
           </li>
         </transition-group>
       </div>
@@ -166,7 +167,7 @@ export default {
 
       today = {
         day: weekday[today.getDay()],
-        date: mm + "-" + dd + "-" + yyyy,
+        date: dd + "-" + mm + "-" + yyyy,
       };
 
       return today;

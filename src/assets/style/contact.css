@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@
   text-align: center;
   color: #ddd;
 }
+
 .border {
   width: 100px;
   height: 10px;
@@ -34,13 +36,16 @@
   outline: none;
   transition: 0.5s;
 }
+
 .contact-form-text:focus {
   box-shadow: 0 0 10px 4px #34495e;
 }
+
 textarea.contact-form-text {
   resize: none;
   height: 120px;
 }
+
 .contact-form-btn {
   float: right;
   border: 0;
@@ -51,13 +56,16 @@ textarea.contact-form-text {
   cursor: pointer;
   transition: 0.5s;
 }
+
 .contact-form-btn:hover {
   background: #2980b9;
 }
+
 body {
   min-height: 100vh;
   padding: 0;
 }
+
 header {
   position: absolute;
   top: 0;
@@ -69,14 +77,17 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 header a {
   text-decoration: #001721;
 }
+
 header .logo {
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
 }
+
 .showcase {
   position: absolute;
   right: 0;
@@ -90,23 +101,30 @@ header .logo {
   transition: 0.5s;
   z-index: 2;
 }
+
 .showcase.active {
   right: 300px;
 }
+
 .overlay {
+  min-height: 100vh;
+  min-width: 100%;
   padding-top: 120px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   background: #001721;
+  bottom: -100px;
   /* mix-blend-mode: overlay; */
 }
+
 .text {
   position: relative;
   z-index: 10;
 }
+
 .text a {
   display: inline-block;
   font-size: 1em;
@@ -120,20 +138,25 @@ header .logo {
   letter-spacing: 2px;
   transition: 0.2s;
 }
+
 .text a:hover {
   letter-spacing: 6px;
 }
+
 .social {
   position: absolute;
   z-index: 10;
-  bottom: 20px;
+  bottom: -100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 100px;
 }
+
 .social li {
   list-style: none;
 }
+
 .social li a {
   display: inline-block;
   margin-right: 20px;
@@ -141,6 +164,7 @@ header .logo {
   transform: scale(0.5);
   transition: 0.5s;
 }
+
 .social li a:hover {
   transform: scale(0.5) translateY(-15px);
 }

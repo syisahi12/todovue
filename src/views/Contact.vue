@@ -20,22 +20,23 @@
         </form>
       </div>
     </div>
-    <!-- <div class="text">
-        <router-link to="/">Back</router-link>
-      </div> -->
-    <ul class="social">
-      <li>
-        <a href="#"><img src="../assets/images/facebook.png" /></a>
-      </li>
-      <li>
-        <a href="#"><img src="../assets/images/twitter.png" /></a>
-      </li>
-      <li>
-        <a href="#"><img src="../assets/images/instagram.png" /></a>
-      </li>
-    </ul>
+    <div class="about-section-row">
+      <div class="about-section-col">
+        <ul class="social">
+          <li>
+            <a href="#"><img src="../assets/images/facebook.png" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="../assets/images/twitter.png" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="../assets/images/instagram.png" /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
-<style src="../assets/style/contact.css">
+<style src="../assets/style/contact.css" scoped>
 </style>

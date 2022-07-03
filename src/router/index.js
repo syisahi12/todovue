@@ -8,11 +8,6 @@ const routes = [
     component: () => import('../views/Index.vue')
   },
   {
-    path: '/history',
-    name: 'history',
-    component: () => import('../views/History.vue')
-  },
-  {
     path: '/',
     name: 'landing',
     component: () => import('../views/Landing.vue')

@@ -79,5 +79,5 @@
   </div>
 </template>
 
-<style src="../assets/style/about.css">
+<style src="../assets/style/about.css" scoped>
 </style>

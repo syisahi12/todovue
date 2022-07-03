@@ -1,5 +1,79 @@
 <template>
-<div class="about">
-    <h2>About</h2>
-</div>
+  <div class="landing">
+    <section class="showcase">
+      <header>
+        <router-link to="/"
+          ><h2 class="logo" style="text-transform: lowercase">
+            inget.in
+          </h2></router-link
+        >
+      </header>
+      <div class="overlay">
+        <div class="about-section">
+          <div class="inner-width">
+            <h1>About Us</h1>
+            <div class="border"></div>
+            <div class="about-section-row">
+              <div class="about-section-col">
+                <div class="about">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Fuga provident ea hic, neque amet sequi temporibus iure
+                    aliquid placeat inventore. Quae dolores dolore, cum nulla
+                    quas ipsum facere maxime, necessitatibus!
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+              <div class="about-section-col">
+                <div class="skills">
+                  <div class="skill">
+                    <div class="title">CSS</div>
+                    <div class="progress">
+                      <div class="progress-bar p1"><span>42%</span></div>
+                    </div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="title">Vue</div>
+                    <div class="progress">
+                      <div class="progress-bar p2"><span>38%</span></div>
+                    </div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="title">JavaScript</div>
+                    <div class="progress">
+                      <div class="progress-bar p3"><span>12%</span></div>
+                    </div>
+                  </div>
+
+                  <div class="skill">
+                    <div class="title">HTML</div>
+                    <div class="progress">
+                      <div class="progress-bar p4"><span>8%</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#"><img src="../assets/images/facebook.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../assets/images/twitter.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../assets/images/instagram.png" /></a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </template>
+
+<style src="../assets/style/about.css">
+</style>

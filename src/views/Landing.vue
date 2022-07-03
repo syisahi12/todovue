@@ -49,5 +49,5 @@ export default {
 }
 </script>
 
-<style src="../assets/style/landing.css">
+<style src="../assets/style/landing.css" scoped>
 </style>

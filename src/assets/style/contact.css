@@ -5,9 +5,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.contact-section {
-  padding: 40px 0;
-}
+
 .contact-section h1 {
   text-align: center;
   color: #ddd;
@@ -23,7 +21,6 @@
   max-width: 600px;
   margin: auto;
   padding: 0 10px;
-  overflow: hidden;
 }
 
 .contact-form-text {

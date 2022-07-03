@@ -36,10 +36,7 @@
 
       <div v-if="pending.length > 0">
         <p class="status busy">
-          You have {{ pending.length }} pending item<span
-            v-if="pending.length > 1"
-            >s</span
-          >
+          Ada {{ pending.length }} kegiatan yang harus dilakukan
         </p>
         <transition-group name="todo-item" tag="ul" class="todo-list">
           <li v-for="item in pending" :key="item.id" :class="{onEdit: item == editedTodo}">
@@ -203,26 +200,6 @@ export default {
       this.new_todo = "";
       // save the new item in localstorage
       return true;
-    },
-    editTodo: function (item) {
-      this.beforeEditCache = item.title;
-      this.editedTodo = item;
-    },
-
-    doneEdit: function (item) {
-      if (!this.editedTodo) {
-        return;
-      }
-      this.editedTodo = null;
-      todo.title = todo.title.trim();
-      if (!item.title) {
-        this.removeTodo(item);
-      }
-    },
-
-    cancelEdit: function (item) {
-      this.editedTodo = null;
-      todo.title = this.beforeEditCache;
     },
     deleteItem(item) {
       this.todoList.splice(this.todoList.indexOf(item), 1);

@@ -36,13 +36,11 @@
 
       <div v-if="pending.length > 0">
         <p class="status busy">
-          You have {{ pending.length }} pending item<span
-            v-if="pending.length > 1"
-            >s</span
-          >
+          Ada {{ pending.length }} kegiatan yang harus dilakukan
         </p>
         <transition-group name="todo-item" tag="ul" class="todo-list">
-          <li v-for="item in pending" v-bind:key="item.title">
+          <li v-for="item in pending" :key="item.id" :class="{onEdit: item == editedTodo}">
+            <div class="viewTodo">
             <input
               class="todo-checkbox"
               v-bind:id="'item_' + item.id"
@@ -52,7 +50,15 @@
             <label v-bind:for="'item_' + item.id"></label>
             <span class="todo-text">{{ item.title }}</span>
             <span class="delete" @click="deleteItem(item)"></span>
-            <span class="edit" @click="editItem(item)"></span>
+            <span class="logoEdit" @click="editItem(item)"></span>
+            </div>
+            <input
+              class="edit"
+              type="text"
+              v-model="item.title"
+              @keydown.enter="editedTodo = null"
+              @blur="editedTodo = null"
+            />
           </li>
         </transition-group>
       </div>
@@ -109,10 +115,10 @@ export default {
   name: "App",
   data() {
     return {
-      todoList: [
-      ],
+      todoList: [],
       new_todo: "",
       showComplete: false,
+      editedTodo: null,
     };
   },
   mounted() {
@@ -197,6 +203,9 @@ export default {
     },
     deleteItem(item) {
       this.todoList.splice(this.todoList.indexOf(item), 1);
+    },
+    editItem(item){
+      this.editedTodo = item
     },
     toggleShowComplete() {
       this.showComplete = !this.showComplete;

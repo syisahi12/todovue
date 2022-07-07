@@ -56,7 +56,13 @@
               class="edit"
               type="text"
               v-model="item.title"
-              @keydown.enter="editedTodo = null"
+              @keydown.esc="item.title = tmp.title,editedTodo = null,tmp = null"
+              @keydown.enter="()=>{
+                if (item.title == '') {
+                  deleteItem()
+                }
+                editedTodo = null
+              }"
               @blur="editedTodo = null"
             />
           </li>
@@ -119,6 +125,7 @@ export default {
       new_todo: "",
       showComplete: false,
       editedTodo: null,
+      tmp: null
     };
   },
   mounted() {
@@ -206,6 +213,11 @@ export default {
     },
     editItem(item){
       this.editedTodo = item
+      this.tmp = {
+        "id" : item.id,
+        "title" : item.title,
+        "done" : item.done
+      }
     },
     toggleShowComplete() {
       this.showComplete = !this.showComplete;

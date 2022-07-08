@@ -39,25 +39,50 @@
           Ada {{ pending.length }} kegiatan yang harus dilakukan
         </p>
         <transition-group name="todo-item" tag="ul" class="todo-list">
-          <li v-for="item in pending" :key="item.id" :class="{onEdit: item == editedTodo}">
+          <li
+            v-for="item in pending"
+            :key="item.id"
+            :class="{ onEdit: item == editedTodo }"
+          >
             <div class="viewTodo">
-            <input
-              class="todo-checkbox"
-              v-bind:id="'item_' + item.id"
-              v-model="item.done"
-              type="checkbox"
-            />
-            <label v-bind:for="'item_' + item.id"></label>
-            <span class="todo-text">{{ item.title }}</span>
-            <span class="delete" @click="deleteItem(item)"></span>
-            <span class="logoEdit" @click="editItem(item)"></span>
+              <input
+                class="todo-checkbox"
+                v-bind:id="'item_' + item.id"
+                v-model="item.done"
+                type="checkbox"
+              />
+              <label v-bind:for="'item_' + item.id"></label>
+              <span class="todo-text">{{ item.title }}</span>
+              <span class="delete" @click="deleteItem(item)"></span>
+              <span class="logoEdit" @click="editItem(item)"></span>
             </div>
             <input
               class="edit"
               type="text"
               v-model="item.title"
-              @keydown.enter="editedTodo = null"
-              @blur="editedTodo = null"
+              @keydown.esc="
+                (item.title = tmp.title), (editedTodo = null), (tmp = null)
+              "
+              @keydown.enter="
+                () => {
+                  if (item.title == '') {
+                    if (item == editedTodo) {
+                      deleteItem(editedTodo);
+                    }
+                  }
+                  editedTodo = null;
+                }
+              "
+              @blur.stop="
+                () => {
+                  if (item.title == '') {
+                    if (item == editedTodo) {
+                      deleteItem(editedTodo);
+                    }
+                  }
+                  editedTodo = null;
+                }
+              "
             />
           </li>
         </transition-group>
@@ -74,7 +99,7 @@
       </transition>
 
       <div v-if="completed.length > 0 && showComplete">
-        <p class="status">Completed tasks: {{ completedPercentage }}</p>
+        <p class="status">Pekerjaan anda telah selesai: {{ completedPercentage }}</p>
         <transition-group name="todo-item" tag="ul" class="todo-list archived">
           <li v-for="item in completed" v-bind:key="item.title">
             <input
@@ -119,6 +144,7 @@ export default {
       new_todo: "",
       showComplete: false,
       editedTodo: null,
+      tmp: null,
     };
   },
   mounted() {
@@ -162,20 +188,16 @@ export default {
       var dd = today.getDate();
       var mm = today.getMonth() + 1; //January is 0!
       var yyyy = today.getFullYear();
-
       if (dd < 10) {
         dd = "0" + dd;
       }
-
       if (mm < 10) {
         mm = "0" + mm;
       }
-
       today = {
         day: weekday[today.getDay()],
         date: dd + "-" + mm + "-" + yyyy,
       };
-
       return today;
     },
   },
@@ -204,8 +226,13 @@ export default {
     deleteItem(item) {
       this.todoList.splice(this.todoList.indexOf(item), 1);
     },
-    editItem(item){
-      this.editedTodo = item
+    editItem(item) {
+      this.editedTodo = item;
+      this.tmp = {
+        id: item.id,
+        title: item.title,
+        done: item.done,
+      };
     },
     toggleShowComplete() {
       this.showComplete = !this.showComplete;

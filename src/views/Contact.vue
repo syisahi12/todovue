@@ -12,11 +12,11 @@
         <h1>Contact Us</h1>
         <div class="border"></div>
         <form class="contact-form">
-          <input type="text" class="contact-form-text" placeholder="Nama" />
-          <input type="email" class="contact-form-text" placeholder="Email" />
-          <input type="text" class="contact-form-text" placeholder="No.telp" />
+          <input type="text" class="contact-form-text" placeholder="Nama" >
+          <input type="email" class="contact-form-text" placeholder="Email" >
+          <input type="text" class="contact-form-text" placeholder="No.telp" >
           <textarea class="contact-form-text" placeholder="Pesan"></textarea>
-          <input type="submit" class="contact-form-btn" value="Kirim" />
+          <input type="submit" class="contact-form-btn" value="Kirim" >
         </form>
       </div>
     </div>
@@ -24,13 +24,13 @@
       <div class="about-section-col">
         <ul class="social">
           <li>
-            <a href="#"><img src="../assets/images/facebook.png" /></a>
+            <a href="#"><img src="../assets/images/facebook.png" ></a>
           </li>
           <li>
-            <a href="#"><img src="../assets/images/twitter.png" /></a>
+            <a href="#"><img src="../assets/images/twitter.png" ></a>
           </li>
           <li>
-            <a href="#"><img src="../assets/images/instagram.png" /></a>
+            <a href="#"><img src="../assets/images/instagram.png" ></a>
           </li>
         </ul>
       </div>

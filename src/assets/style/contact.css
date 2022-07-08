@@ -14,9 +14,9 @@
 
 .border {
   width: 100px;
-  height: 10px;
+  height: 5px;
   background: #34495e;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 
 .contact-form {
@@ -29,7 +29,7 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-  margin: 16px 0;
+  margin: 8px 0;
   border: 0;
   background: #fff;
   padding: 20px 40px;
@@ -43,7 +43,7 @@
 
 textarea.contact-form-text {
   resize: none;
-  height: 120px;
+  height: 100px;
 }
 
 .contact-form-btn {
@@ -107,7 +107,7 @@ header .logo {
 }
 
 .overlay {
-  min-height: 100vh;
+  max-height: 100vh;
   min-width: 100%;
   padding-top: 120px;
   position: absolute;
@@ -146,7 +146,7 @@ header .logo {
 .social {
   position: absolute;
   z-index: 10;
-  bottom: -100px;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;

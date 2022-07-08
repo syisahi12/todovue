@@ -177,6 +177,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    left: 100px;
   }
   .social li {
     list-style: none;
@@ -202,4 +203,4 @@
     .about{
       text-align: center;
     }
-  }  
+  }

@@ -16,13 +16,14 @@
             <div class="about-section-row">
               <div class="about-section-col">
                 <div class="about">
+                  <br>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fuga provident ea hic, neque amet sequi temporibus iure
-                    aliquid placeat inventore. Quae dolores dolore, cum nulla
-                    quas ipsum facere maxime, necessitatibus!
+                    Menjadi Lebih Produktif Bersama Inget.In, Sesuai Dengan
+                    Slogan Kami Disini Kami Menawarkan Kemudahan Untuk User
+                    Dengan Menggunakan Apps Kami User Bisa Membuat List Yang
+                    AKan DiKerjakan, Dan Itu Akan Membantu User Untuk Me
+                    Manajement Waktu Da Lain-Lain
                   </p>
-                  <a href="#">Read More</a>
                 </div>
               </div>
               <div class="about-section-col">
@@ -61,13 +62,13 @@
               <div class="about-section-col">
                 <ul class="social">
                   <li>
-                    <a href="#"><img src="../assets/images/facebook.png" /></a>
+                    <a href="#"><img src="../assets/images/facebook.png" ></a>
                   </li>
                   <li>
-                    <a href="#"><img src="../assets/images/twitter.png" /></a>
+                    <a href="#"><img src="../assets/images/twitter.png" ></a>
                   </li>
                   <li>
-                    <a href="#"><img src="../assets/images/instagram.png" /></a>
+                    <a href="#"><img src="../assets/images/instagram.png" ></a>
                   </li>
                 </ul>
               </div>
@@ -80,4 +81,4 @@
 </template>
 
 <style src="../assets/style/about.css" scoped>
-</style>
+</style> 

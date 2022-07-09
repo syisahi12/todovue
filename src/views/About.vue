@@ -62,13 +62,13 @@
               <div class="about-section-col">
                 <ul class="social">
                   <li>
-                    <a href="#"><img src="../assets/images/facebook.png" ></a>
+                    <a href="#" class="right"><img src="../assets/images/facebook.png" ></a>
                   </li>
                   <li>
                     <a href="#"><img src="../assets/images/twitter.png" ></a>
                   </li>
                   <li>
-                    <a href="#"><img src="../assets/images/instagram.png" ></a>
+                    <a href="#" class="right"><img src="../assets/images/instagram.png" ></a>
                   </li>
                 </ul>
               </div>

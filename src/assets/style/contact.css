@@ -88,6 +88,29 @@ header .logo {
   cursor: pointer;
 }
 
+@media (max-width:600px) {
+  header {
+    display: block;
+  }
+
+  header .logo {
+    text-align: center;
+  }
+
+  .social {
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 100px;
+    padding: 40px 45px !important;
+  }
+
+  .social li {
+    list-style: none;
+  }
+}
+
 .showcase {
   position: absolute;
   right: 0;
